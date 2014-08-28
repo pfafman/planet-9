@@ -24,10 +24,11 @@ Router.map ->
     path: '/tableTest/:skip?'
     controller: TestTableController
 
-  @route 'map'
+  @route 'map',
+    layoutTemplate: 'mapLayout'
 
   @route 'profile'
-
+    
 
 if Meteor.isClient
   Router.onBeforeAction (pause) ->
