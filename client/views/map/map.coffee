@@ -22,7 +22,7 @@ initMap = ->
     center: new google.maps.LatLng(39.11,-120.031)
     scaleControl: true
     # How you would like to style the map. 
-# This is where you would paste any style found on Snazzy Maps.
+    # This is where you would paste any style found on Snazzy Maps.
     styles: [
       {
         featureType: "landscape"

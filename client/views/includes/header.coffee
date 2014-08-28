@@ -1,4 +1,13 @@
 
+Template.header.created = ->
+  # jQuery to collapse the navbar on scroll
+  $(window).scroll ->
+    if $(".navbar").offset().top > 50
+      $(".navbar-fixed-top").addClass("top-nav-collapse")
+    else if $(".navbar").offset().top < 30
+      $(".navbar-fixed-top").removeClass("top-nav-collapse")
+    
+
 Template.header.helpers
 
   pageTitle: ->

@@ -1,9 +1,14 @@
 
+@import "grayscale.import.less";
+
+
 body {
   background-image: url('img/mnt.jpg');
   background-size: cover;
   background-repeat: no-repeat;
+  background-attachment: fixed;
 }
+
 
 img {
   max-width: 100%;
@@ -14,11 +19,11 @@ img {
 .main {
   padding: 10px;
   width: 98%;
-  margin-top: 60px;
+  margin-top: 120px;
   margin-bottom: 40px;
   margin-left: 2%;
   margin-right: 2%;
-  //color: #ddd;
+  color: #444;
   //background-color: #fff;
   //border-radius: 5px;
   //box-shadow: 0 1px 10px #a7a7a7, inset 0 1px 0 #fff;
@@ -30,7 +35,9 @@ img {
     //width: 100%;
     transition: all 1.0s ease;
     background: #ccc;
-    padding: 10px;
+    margin: 60px;
+    margin-top: 100px;
+    padding: 20px;
     border-radius: 5px;
     text-align: center;
     box-shadow: 0 1px 10px #a7a7a7, inset 0 1px 0 #fff;
@@ -70,7 +77,10 @@ img {
 }
 
 .navbar-inverse {
-  opacity: 0.85;
+  //opacity: 0.85;
+}
+.navbar-text {
+  font-size: 14px;
 }
 
 .fullscreen {
@@ -105,7 +115,7 @@ footer {
 }
 
 .mobile-nav {
-  padding-top: 15px;
+  //padding-top: 15px;
 }
 
 // MISCELLANEOUS

@@ -41,3 +41,10 @@ if Meteor.isClient
 
 
   Router.onStop cleanUp
+
+  scrollToTop = (pause) ->
+    $(window).scrollTop(0)
+
+  Router.onRun scrollToTop
+
+  Router.onBeforeAction loading
