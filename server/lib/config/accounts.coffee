@@ -1,12 +1,12 @@
 Accounts.config
     sendVerificationEmail: true
 
-Accounts.emailTemplates.siteName = "Test 9"
+Accounts.emailTemplates.siteName = "Planet 9"
 Accounts.emailTemplates.from = "tim <tim@pfafman.com>"
 
 
 Accounts.emailTemplates.verifyEmail.subject = (user) ->
-    "Welcome to Test 9.  Please verify your email"
+    "Welcome to Planet 9.  Please verify your email"
 
 Accounts.emailTemplates.verifyEmail.text = (user, url) ->
     """
