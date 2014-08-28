@@ -1,0 +1,23 @@
+<template name="map">
+    <div id="map-pane">
+        {{#unless mapIsReady}}
+            {{> hideMap}}
+        {{/unless}}
+        <div class="map-well">
+            {{> mapCanvas}}
+        </div>
+
+    </div>
+</template>
+
+
+<template name="hideMap">
+    <div class="hide-map">
+        <i class="fa fa-4x fa-globe fa-spin"></i>
+    </div>
+</template>
+
+
+<template name="mapCanvas">
+    <div id="map-canvas"></div>
+</template>

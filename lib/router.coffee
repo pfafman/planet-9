@@ -24,6 +24,8 @@ Router.map ->
     path: '/tableTest/:skip?'
     controller: TestTableController
 
+  @route 'map'
+
   @route 'profile'
 
 

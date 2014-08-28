@@ -19,3 +19,8 @@ Meteor.startup ->
       else
         CoffeeAlerts.success("Email Verified")
 
+  Meteor.defer ->
+    if /mobile/i.test(navigator.userAgent)
+      console.log('Mobile Device')
+      $ ->
+        FastClick.attach document.body
