@@ -6,7 +6,13 @@ Template.header.created = ->
       $(".navbar-fixed-top").addClass("top-nav-collapse")
     else if $(".navbar").offset().top < 30
       $(".navbar-fixed-top").removeClass("top-nav-collapse")
-    
+  
+  Meteor.setTimeout ->
+    $('.navbar-custom').removeClass('hide')
+    Meteor.defer ->
+      $('.navbar-custom').css('opacity', 0.8)
+  , 3000
+
 
 Template.header.helpers
 

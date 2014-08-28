@@ -47,4 +47,4 @@ if Meteor.isClient
 
   Router.onRun scrollToTop
 
-  Router.onBeforeAction loading
+  #Router.onBeforeAction loading
