@@ -1,0 +1,24 @@
+# Meteor packages used by this project, one per line.
+#
+# 'meteor add' and 'meteor remove' will edit this file for you,
+# but you can also edit it by hand.
+
+standard-app-packages
+iron:router
+coffeescript
+less
+accounts-password
+email
+pfafman:accounts-entry
+pfafman:coffee-alerts
+pfafman:coffee-modal
+pfafman:bootstrap-3
+pfafman:font-awesome-4
+pfafman:crossfilter
+pfafman:dc
+pfafman:nvd3
+pfafman:plivo
+pfafman:iron-table
+mrt:moment
+d3
+

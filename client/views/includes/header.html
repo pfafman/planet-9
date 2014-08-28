@@ -1,0 +1,99 @@
+<template name="header">
+
+  <nav class="navbar navbar-inverse navbar-fixed-top navbar-default" role="banner">
+      <div class="container">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="{{pathFor 'home'}}">Planet 9</a>
+          </div>
+
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="navbar-collapse">
+              <ul class="nav navbar-nav">
+                
+                <li class="{{activeRouteClass 'home'}}"><a href="{{pathFor 'home'}}"><i class="fa fa-home"></i> Home</a></li>
+                
+                <li class="dropdown">
+                  <a class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-wrench"></i> Tests <b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                    
+                    <li class="{{activeRouteClass 'tableTest'}}">
+                      <a href="{{pathFor 'tableTest'}}"><i class="fa fa-table"></i> Table Test</a>
+                    </li>
+
+                    <li class="{{activeRouteClass 'nvd3Test'}}">
+                      <a href="{{pathFor 'nvd3Test'}}"><i class="fa fa-area-chart"></i> NVD3 Chart Test</a>
+                    </li>
+
+                     <li class="{{activeRouteClass 'dcTest'}}">
+                      <a href="{{pathFor 'dcTest'}}"><i class="fa fa-area-chart"></i> Dimensional Chart Test</a>
+                    </li>
+
+                  </ul>
+                </li>
+
+                {{#if admin}}
+                <li class="dropdown">
+                  <a class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-wrench"></i> Admin <b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                    
+                    <li class="{{activeRouteClass 'tableTest'}}">
+                      <a href="{{pathFor 'tableTest'}}"><i class="fa fa-table"></i>  Table Test</a>
+                    </li>
+
+                    <li class="{{activeRouteClass 'otherTableTest'}}">
+                      <a href="{{pathFor 'otherTableTest'}}"><i class="fa fa-table"></i> Other Table Test</a>
+                    </li>
+
+                    <li class="{{activeRouteClass 'reactiveTableTest'}}">
+                      <a href="{{pathFor 'reactiveTableTest'}}">
+                        <i class="fa fa-table"></i> Reactive Table Test
+                      </a>
+                    </li>
+
+                    <li class="{{activeRouteClass 'jqueryTableTest'}}">
+                      <a href="{{pathFor 'jqueryTableTest'}}">
+                        <i class="fa fa-table"></i> jQuery Table Test
+                      </a>
+                    </li>
+                    
+                    <li class="divider"></li>
+
+                    <li class="{{activeRouteClass 'adminUsers'}}">
+                      <a href="{{pathFor 'adminUsers'}}"><i class="fa fa-users"></i> Users</a>
+                    </li>
+
+                    <li class="divider"></li>
+                    <li class="{{activeRouteClass 'dialogTest'}}">
+                      <a href="{{pathFor 'dialogTest'}}"><i class="fa fa-windows"></i> Dialog Test</a>
+                    </li>
+                    
+                    <li><a href="#"><i class="fa fa-link"></i> Separated link</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#"><i class="fa fa-cog"></i> Settings</a></li>
+                  </ul>
+                </li>
+                {{/if}}
+                
+              </ul>
+              <ul class="nav navbar-nav navbar-right">
+
+                <li class="{{activeRouteClass 'profile'}}">
+                  <a href="{{pathFor 'profile'}}">
+                    <i class="fa fa-user"></i>  Profile
+                  </a>
+                </li>
+
+                {{> accountButtons}}
+              </ul>
+          </div><!-- /.navbar-collapse -->
+      </div>
+  </nav>
+
+</template>

@@ -1,0 +1,39 @@
+
+<template name="dcTest">
+  <div class="container standard">
+    {{#if haveData}}
+
+      {{> dcCharts}}
+    
+    {{else}}
+    
+      <div class="loading">
+        <i class="fa fa-4x fa-spinner fa-spin"></i>
+      </div>
+    
+    {{/if}}
+  </div>
+</template>
+
+<template name="dcCharts">
+  <div id="dc-charts">
+      
+    <div class="chart" id="hour-chart">
+      <span><strong>Hour of the Day</strong></span>
+      <span class="reset current-filter" style="display: none;">Current filter: <span class="filter"></span></span>
+      <button id="reset-time-of-day" class="reset btn btn-link btn-xs" style="display: none;">reset</button>
+    </div>
+    
+    <div class="chart" id="random-chart">
+      <span><strong>Random Numbers</strong></span>
+      <span class="reset current-filter" style="display: none;">Current filter: <span class="filter"></span></span>
+      <button id="reset-random" class="reset btn btn-link btn-xs" style="display: none;">reset</button>
+      
+    </div>
+
+  </div>
+
+  <div class="dc-data-count">
+    <span class="filter-count"></span> selected out of <span class="total-count"></span> records
+  </div>
+</template>

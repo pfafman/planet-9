@@ -1,0 +1,169 @@
+
+body {
+  background-image: url('img/mnt.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+img {
+  max-width: 100%;
+}
+
+.main {
+  padding: 10px;
+  width: 98%;
+  margin-top: 60px;
+  margin-bottom: 40px;
+  margin-left: 2%;
+  margin-right: 2%;
+  //color: #ddd;
+  //background-color: #fff;
+  //border-radius: 5px;
+  //box-shadow: 0 1px 10px #a7a7a7, inset 0 1px 0 #fff;
+  min-height: 100px;
+  opacity: 0.95;
+
+  .home {
+    color: #ddd;
+    width: 100%;
+    transition: all 1.0s ease;
+    //background: #fff;
+    padding: 10px;
+    border-radius: 5px;
+  }
+
+  .home:hover {
+    color: #333;
+    background: #999;
+    opacity: 0.8;
+    //padding: 15px;
+  }
+
+  .home-image {
+    transition: all 1.0s ease;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    opacity: 0.3;
+    color: red;
+  }
+
+  .home-image:hover {
+    -webkit-transform: rotate3d(1, 1, 1, -10deg);
+    transform: rotate3d(0, 0, 1, -10deg);
+  }
+
+  .standard {
+    padding: 10px;
+    background-color: #fff;
+    opacity: 0.98;
+    border-radius: 5px;
+    box-shadow: 0 1px 10px #a7a7a7, inset 0 1px 0 #fff;
+  }
+}
+
+.main:hover {
+  //opacity: 0.7;
+}
+
+.navbar-inverse {
+  opacity: 0.85;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  margin: auto;
+  width: 100%;
+  text-align: center;
+  padding: 0px;
+  height: 30px;
+  opacity: 0.8;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  margin: auto;
+  width: 100%;
+  text-align: center;
+  padding: 5px;
+  color: #999;
+  background: rgba(50, 50, 50, 0.85);
+}
+
+.mobile-nav {
+  padding-top: 15px;
+}
+
+// MISCELLANEOUS
+
+.browser-warning {
+  background: #BD3535;
+  color: #fff;
+  padding: 0.5em 0;
+  text-align: center;
+
+   a {
+    color: #fff;
+    text-decoration: underline;
+  }
+}
+
+#iron-router-progress {
+    background-color : #777;
+    box-shadow       : 0 0 5px #777;
+}
+
+.iron-table-container {
+  opacity: 0.95;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 1px 10px #a7a7a7, inset 0 1px 0 #fff;
+  .controls {
+      
+      a {
+          //color: #000;
+      }
+      a:hover {
+          //color: @link-hover-color;
+      }
+  }
+}
+
+.activeImg {
+    height: 14px;
+    width: 14px;
+}
+
+.chart {
+  display: inline-block;
+  height: 300px;
+  width: 500px;
+}
+
+.stack-bar-top {
+  top: 0px;
+  
+
+  .alert {
+    border-radius: 0px;
+  }
+}
+
+.loading {
+  //position: relative;
+  text-align: center;
+  margin-top: 7px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40px;
+  height: 40px;
+  z-index: 1000;
+  //background-color: #ddd;
+  //opacity: 0.8;
+
+  #spinner {
+      position: relative;
+      margin: auto;
+  }
+}

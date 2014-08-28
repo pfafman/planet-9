@@ -1,0 +1,20 @@
+<template name="footer">
+  <footer>
+    &copy; 2014 Pfafman.com
+    <span class="status pull-right">
+        {{#if bleEnabled}}
+            <img src="/img/bluetooth.png" title="Bluetooth Enabled" rel="tooltip" />
+        {{/if}}
+        {{#if isMobileDevice}}
+            <button class="btn btn-xs btn-link is-mobile">
+                <span class="glyphicon glyphicon-phone"></span>
+            </button>
+        {{/if}}
+        {{#if connected}}
+            <i class="fa fa-link" title="Connected to Server" rel="tooltip"></i>
+        {{else}}
+            <i class="fa fa-ban text-danger" title="Not Connected to Server" rel="tooltip"></i> {{disconnectReason}}
+        {{/if}}
+    </span>
+  </footer>
+</template>
