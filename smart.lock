@@ -1,0 +1,18 @@
+{
+  "meteor": {},
+  "dependencies": {
+    "basePackages": {
+      "bootstrap3-less": {
+        "git": "https://github.com/pfafman/meteor-bootstrap3-less.git",
+        "branch": "master"
+      }
+    },
+    "packages": {
+      "bootstrap3-less": {
+        "git": "https://github.com/pfafman/meteor-bootstrap3-less.git",
+        "branch": "master",
+        "commit": "c702185813b4a898408000265f71b8fa45e9783e"
+      }
+    }
+  }
+}

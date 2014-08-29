@@ -12,7 +12,6 @@ email
 pfafman:accounts-entry
 pfafman:coffee-alerts
 pfafman:coffee-modal
-pfafman:bootstrap-3
 pfafman:font-awesome-4
 pfafman:crossfilter
 pfafman:dc
@@ -23,4 +22,6 @@ mrt:moment
 d3
 percolatestudio:fastclick
 pfafman:google-loader
-
+facts
+dburles:collection-helpers
+bootstrap3-less

@@ -1,21 +1,29 @@
 
 Template.checkMark.rendered = ->
-  Session.set("checkMarkEditRecordId", null)
+  Session.set("ironTableActiveRecordId", null)
 
 
 Template.checkMark.helpers
   doEdit: ->
-    Session.get("checkMarkEditRecordId") is @record._id
+    Session.get("ironTableActiveRecordId") is @record._id
     
 
 Template.checkMark.events
 
   "click .check-mark": (e) ->
     console.log('check mark click', @record._id, e)
-    Session.set("checkMarkEditRecordId", @record._id)
+    Session.set("ironTableActiveRecordId", @record._id)
 
-  "mouseout .check-mark": (e) ->
-    Session.set("checkMarkEditRecordId", null)
+  "mouseenter .check-mark": (e) ->
+    console.log('mouseenter')
+
+  "mouseleave .check-mark": (e) ->
+    console.log('mouseleave')
+    Session.set("ironTableActiveRecordId", null)
+
+  "mouseleave .check-mark-checkbox": (e) ->
+    console.log('mouseleave checkbox')
+    Session.set("ironTableActiveRecordId", null)
     
   "click .check-mark-checkbox": (e) ->
     e.preventDefault()
