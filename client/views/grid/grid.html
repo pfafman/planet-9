@@ -1,0 +1,53 @@
+<template name="grid">
+  <div class="grid-container">
+
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <div class="heading">
+          <h3>
+            Grid Test
+          </h3>
+
+          <span class="links">
+             <button id="new-record" class="btn btn-link btn-sm" title="New Grid" 
+                rel='tooltip' data-placement="bottom">
+                <i class="fa fa-plus-square fa-lg green"></i> 
+              </button>
+          </span>
+        </div>
+      </div>
+        
+      <div class="panel-body">
+          
+      </div>
+
+      {{#if loading}}
+        <div class="loading">
+          {{> spinner}}
+        </div>
+      {{else}}
+
+        {{#if haveData}}
+                
+          <table class="table table-striped table-hover table-condensed">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Comment</th>
+                <th>Updated</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              
+            </tbody>
+          </table>
+
+        {{else}}
+            <div class="well well-sm"><i>No Grid to Grid!</i></div>
+        {{/if}}
+
+      {{/if}}
+    </div>
+  </div>
+</template>

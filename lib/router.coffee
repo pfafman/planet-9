@@ -28,6 +28,13 @@ Router.map ->
     layoutTemplate: 'mapLayout'
 
   @route 'profile'
+
+  @route 'gridTest',
+    template: 'grid'
+    waitOn: ->
+      Meteor.subscribe('grid')
+    data: ->
+      grid: Grid.find()
     
 
 if Meteor.isClient

@@ -48,12 +48,12 @@ ordered-dict@1.0.0
 percolatestudio:fastclick@0.6.7
 pfafman:accounts-entry@0.9.0
 pfafman:coffee-alerts@0.2.0
-pfafman:coffee-modal@0.3.2
+pfafman:coffee-modal@0.3.3
 pfafman:crossfilter@1.3.9
 pfafman:dc@2.0.0
 pfafman:font-awesome-4@4.2.0
 pfafman:google-loader@0.1.0
-pfafman:iron-table@0.3.0
+pfafman:iron-table@0.3.1
 pfafman:nvd3@0.1.0
 pfafman:plivo@1.0.3
 random@1.0.0
