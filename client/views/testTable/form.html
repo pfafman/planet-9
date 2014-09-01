@@ -1,0 +1,21 @@
+
+<template name="testTableForm">
+
+  <div class="form-group">
+    <label for="title" class="control-label">Title</label>
+    <input type="text" class="form-control" name="title" value="{{title}}"
+        placeholder="Title" required />
+  </div>
+
+  <div class="form-group">
+    <label for="comment" class="control-label">Comment</label>
+    <textarea class="form-control" name="comment" placeholder="Add a comment ...">{{comment}}</textarea>
+    <p class="help-block">Tell me about this row</p>
+  </div>
+
+  <div class="form-group">
+    <label for="instruments" class="control-label">Instruments</label>
+    <p class="help-block">TODO: Control to add instruments for this experiment</p>
+  </div>
+
+</template>

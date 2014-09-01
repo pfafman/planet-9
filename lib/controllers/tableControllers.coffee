@@ -19,14 +19,16 @@ class @TestTableController extends IronTableController
   showBackButton   : true
   showNewButton    : true
   #newRecordPath    : 'addTestRecord'
+  formTemplate     : 'testTableForm'
   newRecordTitle   : 'New Record'
   newRecordTooltip : 'Add a new record'
   doDownloadLink   : true
   collection       : -> TestData
   showFilter       : true
   fastRender       : DO_FAST_RENDER
+  inabox           : true
   extraControlsTemplate: "testLink"
-  inabox          : true
+  
   #yieldTemplates:
   #  'beforeTest':
   #    to: 'beforeMain'
