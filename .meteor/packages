@@ -25,3 +25,5 @@ pfafman:google-loader
 facts
 dburles:collection-helpers
 bootstrap3-less
+tmeasday:publish-counts
+

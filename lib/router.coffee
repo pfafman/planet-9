@@ -36,6 +36,18 @@ Router.map ->
     data: ->
       grid: Grid.find()
     
+  #
+  # Admin
+  #
+
+  @route 'adminUsers',
+    path: '/admin/users/:skip?'
+    controller: UserTableController
+
+  @route 'stats',
+    path: '/admin/stats'
+
+    
 
 if Meteor.isClient
   Router.onBeforeAction (pause) ->

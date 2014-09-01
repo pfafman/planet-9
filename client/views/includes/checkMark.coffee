@@ -5,7 +5,7 @@ Template.checkMark.rendered = ->
 
 Template.checkMark.helpers
   doEdit: ->
-    Session.get("ironTableActiveRecordId") is @record._id
+    @column?.contenteditable? and Session.get("ironTableActiveRecordId") is @record._id
     
 
 Template.checkMark.events
