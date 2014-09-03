@@ -36,6 +36,9 @@ Router.map ->
     data: ->
       grid: Grid.find()
     
+
+  @route 'epochTest'
+
   #
   # Admin
   #
