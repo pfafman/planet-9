@@ -8,7 +8,6 @@ UI.registerHelper 'pluralize', (n, thing) -> # fairly stupid pluralizer
 
 
 UI.registerHelper 'admin', ->
-  console.log('admin?', Meteor.user())
   Meteor.user()?.admin
 
 

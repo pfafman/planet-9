@@ -1,0 +1,10 @@
+<template name="editTestData">
+  <div class="container standard">
+    <h3>Edit Test <i>{{name}}</i></h3>    
+    <form>
+      {{> testDataForm}}
+      <button id="save" class="btn btn-primary"><i class="fa fa-floppy-o"></i> Save</button>
+      <a href="{{pathFor 'tableTest'}}" class="btn btn-default"><i class="fa fa-ban"></i> Cancel</a>
+    </form>
+  </div>
+</template>

@@ -13,6 +13,9 @@ class TestDataCollection extends IronTableCollection
 
   recordName: 'Test Record'
   colToUseForName : 'title'
+  methodOnInsert  : 'insertTestDataRecord'
+  methodOnUpdate  : 'updateTestDataRecord'
+  methodOnRemove  : 'removeTestDataRecord'
   
   downloadFields: 
     'title': 1
@@ -56,11 +59,15 @@ class TestDataCollection extends IronTableCollection
       canFilterOn: true
     'location':
       noSort: true
+      target: '_blank'
+      link: (col, rec) ->
+        if rec.location?.coordinates?[0]? and rec.location?.coordinates?[1]?
+          "https://maps.google.com/maps?q=#{rec.location.coordinates[0]},#{rec.location.coordinates[1]}&num=1&vpsrc=0&ie=UTF8&t=m&z=13&iwloc=A"
       display: (col, rec) ->
-          if rec.location?.coordinates?[0]? and rec.location?.coordinates?[1]?
-              lat = rec.location.coordinates[0].toFixed(3)
-              lng = rec.location.coordinates[1].toFixed(3)
-              "(#{lat}, #{lng})"
+        if rec.location?.coordinates?[0]? and rec.location?.coordinates?[1]?
+          lat = rec.location.coordinates[0].toFixed(3)
+          lng = rec.location.coordinates[1].toFixed(3)
+          "(#{lat}, #{lng})"
     'comment':
       edit: true
       insert: true
@@ -141,6 +148,66 @@ Meteor.methods
       TestData.remove select, (error) ->
         if error
           Meteor.throw('400', "Error deleting Test Record: #{error.reason}")
+
+
+  updateTestDataRecord: (_id, attributes) ->
+    console.log('updateTestDataRecord', attributes)
+    user = Meteor.user()
+    throw new Meteor.Error(401, "You need to login to update a instrument") unless user
+    throw new Meteor.Error(422, "No instrument type to update") unless _id
+
+    if attributes.measurements?
+      measurements = []
+      for key, val of attributes.measurements
+        measurements.push val
+      attributes.measurements = measurements
+
+    console.log('updateTestDataRecord', attributes)
+
+    instrumentType = _.extend attributes,
+      changed: new Date().getTime()
+      updaterId: user._id
+      
+    select =
+      _id: _id
+    
+    if not user.admin
+      select.ownerId = user._id
+    
+    TestData.update select,
+      $set: instrumentType
+
+
+  insertTestDataRecord: (attributes) ->
+    user = Meteor.user()
+    throw new Meteor.Error(401, "You need to login to add data")  unless user
+
+    invalidKeys = []
+    if not attributes.title
+      invalidKeys.push
+        name: "title"
+        message: "You must enter a title"
+
+    if invalidKeys.length > 0
+      error:
+        invalidKeys: invalidKeys
+    else
+      console.log('insertTestDataRecord', attributes, attributes.measurements)
+    
+      if attributes.measurements?
+        # Convert Object to an Array
+        measurements = []
+        for key, val of attributes.measurements
+          measurements.push val
+        attributes.measurements = measurements
+      console.log('insertTestDataRecord', attributes)
+      instrumentType = _.extend attributes,
+        ownerId: user._id
+        updaterId: user._id
+        created: new Date().getTime()
+        updated: new Date().getTime()
+      TestData.insert(instrumentType)
+
 
 class TestSubDataCollection extends IronTableCollection
     classID: 'TestSubData'
