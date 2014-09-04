@@ -6,7 +6,7 @@ testData = ->
   rand2 = []
   i = 0
 
-  baseTime = moment().subtract("minutes", 1000)
+  baseTime = moment().subtract(1000, "minutes")
 
   console.log("date?", baseTime.toDate().getHours())
 

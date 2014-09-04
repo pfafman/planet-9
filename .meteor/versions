@@ -51,6 +51,7 @@ pfafman:coffee-alerts@0.2.0
 pfafman:coffee-modal@0.3.4
 pfafman:crossfilter@1.3.9
 pfafman:dc@2.0.0
+pfafman:epoch@0.1.1
 pfafman:font-awesome-4@4.2.0
 pfafman:google-loader@0.1.0
 pfafman:iron-table@0.4.4
