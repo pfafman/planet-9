@@ -4,11 +4,13 @@
 # but you can also edit it by hand.
 
 standard-app-packages
-iron:router
 coffeescript
 less
 accounts-password
 email
+d3
+facts
+iron:router
 pfafman:accounts-entry
 pfafman:coffee-alerts
 pfafman:coffee-modal
@@ -18,13 +20,13 @@ pfafman:dc
 pfafman:nvd3
 pfafman:plivo
 pfafman:iron-table
+pfafman:epoch
 mrt:moment
-d3
 percolatestudio:fastclick
-pfafman:google-loader
-facts
 dburles:collection-helpers
 bootstrap3-less
 tmeasday:publish-counts
-pfafman:epoch
+pfafman:google-loader
+pfafman:bootstrap-switch-less
+pfafman:plain-handlebars
 

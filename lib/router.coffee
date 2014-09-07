@@ -55,6 +55,10 @@ Router.map ->
 
   @route 'epochTest'
 
+  @route 'controlTests'
+
+  @route 'dialogTest'
+
   #
   # Admin
   #
