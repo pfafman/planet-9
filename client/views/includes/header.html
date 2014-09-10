@@ -23,6 +23,10 @@
                   <a class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-wrench"></i> Tests <b class="caret"></b></a>
                   <ul class="dropdown-menu">
                     
+                    <li class="{{activeRouteClass 'map'}}">
+                      <a href="{{pathFor 'map'}}"><i class="fa fa-globe"></i> Map Test</a>
+                    </li>
+
                     <li class="{{activeRouteClass 'tableTest'}}">
                       <a href="{{pathFor 'tableTest'}}"><i class="fa fa-table"></i> Table Test</a>
                     </li>
@@ -63,12 +67,7 @@
                       <a href="{{pathFor 'adminUsers'}}"><i class="fa fa-users"></i> Users</a>
                     </li>
 
-                    <!--
-                    <li class="divider"></li>
-                    <li class="{{activeRouteClass 'dialogTest'}}">
-                      <a href="{{pathFor 'dialogTest'}}"><i class="fa fa-windows"></i> Dialog Test</a>
-                    </li>
-                    
+                
                     <li class="divider"></li>
                     
                     <li><a href="#"><i class="fa fa-cog"></i> Settings</a></li>
