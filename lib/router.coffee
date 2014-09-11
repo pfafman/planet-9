@@ -21,7 +21,7 @@ Router.map ->
         data: TestData.find()
 
   @route 'tableTest',
-    path: '/tableTest/:skip?'
+    path: '/tableTest'
     controller: TestTableController
 
   @route 'editTestData',
@@ -64,7 +64,7 @@ Router.map ->
   #
 
   @route 'adminUsers',
-    path: '/admin/users/:skip?'
+    path: '/admin/users'
     controller: UserTableController
 
   @route 'stats',
