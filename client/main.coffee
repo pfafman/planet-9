@@ -24,3 +24,11 @@ Meteor.startup ->
       console.log('Mobile Device')
       $ ->
         FastClick.attach document.body
+
+    window.fbAsyncInit = ->
+      FB.init
+        appId      : '806625879400740'
+        #status     : true
+        xfbml      : true
+        version    : 'v2.1'
+    
