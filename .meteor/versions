@@ -8,7 +8,6 @@ binary-heap@1.0.0
 blaze-tools@1.0.0
 blaze@2.0.0
 boilerplate-generator@1.0.0
-bootstrap3-less@0.3.0
 callback-hook@1.0.0
 check@1.0.0
 coffeescript@1.0.3
@@ -56,6 +55,7 @@ ordered-dict@1.0.0
 percolatestudio:fastclick@0.6.7
 pfafman:accounts-entry@0.9.4
 pfafman:bootstrap-switch-less@3.0.2
+pfafman:bootstrap3-less@0.3.2
 pfafman:coffee-alerts@0.2.1
 pfafman:coffee-modal@0.3.5
 pfafman:crossfilter@1.3.9
@@ -64,6 +64,7 @@ pfafman:epoch@0.1.1
 pfafman:font-awesome-4@4.2.0
 pfafman:google-loader@0.1.0
 pfafman:iron-table@0.4.5
+pfafman:jasny-bootstrap-less@3.1.3
 pfafman:nvd3@0.1.0
 pfafman:plain-handlebars@1.0.2
 pfafman:plivo@1.1.0

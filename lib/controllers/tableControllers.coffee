@@ -10,7 +10,7 @@ class @UserTableController extends IronTableController
   fastRender      : DO_FAST_RENDER
   doDownloadLink  : true
   inabox          : true
- 
+
 
 class @TestTableController extends IronTableController
   tableTitle       : "Test Table"
@@ -30,7 +30,7 @@ class @TestTableController extends IronTableController
   inabox           : true
   extraControlsTemplate: "testLink"
 
-  
+
   #yieldTemplates:
   #  'beforeTest':
   #    to: 'beforeMain'
@@ -55,6 +55,8 @@ class @TestTableController extends IronTableController
   #data: ->
   #  console.log("TestTable data")
   #  super
+  onAfterAction: ->
+    console.log("Can we get at the Template?", @)
 
 
   # Override the removeRecord Function
@@ -94,4 +96,3 @@ class @DevicesTableController extends IronTableController
   newRecordTitle   : 'New Device'
   newRecordTooltip : 'Add a new device'
   inabox           : false
-

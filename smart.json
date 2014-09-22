@@ -1,7 +1,3 @@
 {
-  "packages": {
-    "bootstrap3-less": {
-      "git": "https://github.com/pfafman/meteor-bootstrap3-less.git"
-    }
-  }
+  "packages": {}
 }

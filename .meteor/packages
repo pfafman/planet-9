@@ -24,10 +24,11 @@ pfafman:epoch
 mrt:moment
 percolatestudio:fastclick
 dburles:collection-helpers
-bootstrap3-less
 tmeasday:publish-counts
 pfafman:google-loader
 pfafman:bootstrap-switch-less
 pfafman:plain-handlebars
 biasport:facebook-sdk
+pfafman:bootstrap3-less
+pfafman:jasny-bootstrap-less
 
