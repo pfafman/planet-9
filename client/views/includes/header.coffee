@@ -6,7 +6,7 @@ Template.header.created = ->
       $(".navbar-fixed-top").addClass("top-nav-collapse")
     else if $(".navbar").offset().top < 30
       $(".navbar-fixed-top").removeClass("top-nav-collapse")
-  
+
   Meteor.setTimeout ->
     $('.navbar-custom').removeClass('hide')
     Meteor.defer ->
@@ -15,10 +15,11 @@ Template.header.created = ->
 
 
 Template.header.helpers
-
   pageTitle: ->
     Session.get('pageTitle') or "Planet 9"
 
+
+Template.menu.helpers
   activeRouteClass: ->
     args = Array.prototype.slice.call(arguments, 0)
     if args?.pop?()
@@ -26,4 +27,3 @@ Template.header.helpers
         active = _.any args, (name) ->
           Router.current?()?.route?.name is name
         active && 'active'
-

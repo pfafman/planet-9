@@ -7,19 +7,24 @@
 
   {{#if currentUser}}
 
-    {{> header}}
+    {{> offScreenMenu}}
+    <div class="canvas">
+      {{> header}}
 
-    <div class="fullscreen">  
-        {{> coffeeAlerts}}
-        {{> yield region='beforeMain'}} 
-        {{> yield}}
+      <div class="fullscreen">
+          {{> coffeeAlerts}}
+          {{> yield region='beforeMain'}}
+          {{> yield}}
+      </div>
+      {{> footer}}
     </div>
-  
+
   {{else}}
-  
+
     {{> coffeeAlerts}}
     {{> yield}}
-  
+    {{> footer}}
+
   {{/if}}
 
   {{> footer}}

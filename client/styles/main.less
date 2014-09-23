@@ -2,8 +2,11 @@
 @import 'variables.import.less';
 //@import 'mixins.import.less';
 
+
 @import "packages/pfafman:bootstrap3-less/bootstrap.import.less";
 @import "packages/pfafman:bootstrap-switch-less/lib/less/build.import.less";
+@import "packages/pfafman:jasny-bootstrap-less/lib/less/variables.import.less";
+@navmenu-width: 175px;
 @import "packages/pfafman:jasny-bootstrap-less/lib/less/jasny-bootstrap.import.less";
 
 
@@ -12,6 +15,7 @@
 
 
 body {
+  background-color: #000;
   background-image: url('img/mnt.jpg');
   background-size: cover;
   background-repeat: no-repeat;
@@ -23,6 +27,21 @@ img {
   max-width: 100%;
 }
 
+.canvas {
+  position: absolute;
+  z-index: 2;
+  background-image: url('/img/mnt.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  width: 100%;
+  height: 100%;
+}
+
+.offcanvas-navmenu {
+  //margin-top: 50px;
+  z-index: 1;
+}
 
 
 .main {
@@ -94,6 +113,8 @@ img {
   font-size: 14px;
 }
 
+
+
 .fullscreen {
   padding: 0px;
   margin-right: 0px;
@@ -123,6 +144,7 @@ footer {
   padding: 5px;
   color: #999;
   background: rgba(50, 50, 50, 0.85);
+  z-index: 2;
 }
 
 .mobile-nav {
@@ -208,4 +230,21 @@ footer {
   //visibility: hidden;
 }
 
+#myNavmenuCanvas {
+  position: relative;
+
+  .navmenu-fixed-left {
+    position: absolute;
+  }
+  .navbar-fixed-top {
+    position: absolute;
+
+    .navbar-toggle {
+      position: relative;
+      display: block;
+      float: left;
+      margin-left: 15px;
+    }
+  }
+}
 //@import "epoch.import.less";

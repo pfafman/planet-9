@@ -2,7 +2,7 @@ Router.configure
   layoutTemplate: 'layout'
   loadingTemplate: 'loading'
   notFoundTemplate: 'notFound'
-    
+
 
 Router.map ->
 
@@ -51,7 +51,7 @@ Router.map ->
       Meteor.subscribe('grid')
     data: ->
       grid: Grid.find()
-    
+
 
   @route 'epochTest'
 
@@ -70,7 +70,7 @@ Router.map ->
   @route 'stats',
     path: '/admin/stats'
 
-    
+
 
 if Meteor.isClient
   Router.onBeforeAction (pause) ->
@@ -79,7 +79,10 @@ if Meteor.isClient
   cleanUp = (pause) ->
     console.log("cleanUp")
     if $('#navbar-collapse')?.hasClass('in')
-        $('#navbar-collapse').collapse('hide')
+      $('#navbar-collapse').collapse('hide')
+    if $('#navbar-side').hasClass('in')
+      $('#navbar-side')?.offcanvas('hide')
+
 
 
   Router.onStop cleanUp

@@ -6,21 +6,26 @@
   {{>coffeeModal}}
 
   {{#if currentUser}}
+  
+    {{> offScreenMenu}}
+    <div class="canvas">
+      {{> header}}
 
-    {{> header}}
-
-    <div class="main">  
-        {{> coffeeAlerts}}
-        {{> yield region='beforeMain'}} 
-        {{> yield}}
+      <div class="main">
+          {{> coffeeAlerts}}
+          {{> yield region='beforeMain'}}
+          {{> yield}}
+      </div>
+      {{> footer}}
     </div>
-  
+
   {{else}}
-  
+
     {{> coffeeAlerts}}
     {{> yield}}
-  
+    {{> footer}}
+
   {{/if}}
 
-  {{> footer}}
+
 </template>
