@@ -19,7 +19,7 @@ Template.header.helpers
     Session.get('pageTitle') or "Planet 9"
 
 
-Template.menu.helpers
+Template.nav.helpers
   activeRouteClass: ->
     args = Array.prototype.slice.call(arguments, 0)
     if args?.pop?()

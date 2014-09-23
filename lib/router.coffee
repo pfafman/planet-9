@@ -80,8 +80,8 @@ if Meteor.isClient
     console.log("cleanUp")
     if $('#navbar-collapse')?.hasClass('in')
       $('#navbar-collapse').collapse('hide')
-    if $('#navbar-side').hasClass('in')
-      $('#navbar-side')?.offcanvas('hide')
+    if $('#navmenu-side').hasClass('in')
+      $('#navmenu-side')?.offcanvas('hide')
 
 
 
