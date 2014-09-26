@@ -29,6 +29,9 @@ class @TestTableController extends IronTableController
   fastRender       : DO_FAST_RENDER
   inabox           : true
   extraControlsTemplate: "testLink"
+  #newRecordCallback :  (rec) ->
+  #   console.log("New Record Callback", rec)
+
 
 
   #yieldTemplates:

@@ -16,8 +16,10 @@ class TestDataCollection extends IronTableCollection
   methodOnInsert  : 'insertTestDataRecord'
   methodOnUpdate  : 'updateTestDataRecord'
   methodOnRemove  : 'removeTestDataRecord'
-  
-  downloadFields: 
+
+  doRowLink : true
+
+  downloadFields:
     'title': 1
     'value': 1
     'invert': 1
@@ -27,7 +29,7 @@ class TestDataCollection extends IronTableCollection
     'last_update': 1
     'location.coordinates.0': 1
     'location.coordinates.1': 1
-  
+
 
   schema:
     'title':
@@ -96,19 +98,19 @@ class TestDataCollection extends IronTableCollection
       onInsert: newDate
       valueFunc: Format.DateTime
 
+  
+  deleteOk: (record) ->
+    isAdminOrOwner( Meteor.userId(), record)
 
-  deleteOk: (record) -> 
-    true
-
-  editOk: (record) -> 
-    true
+  editOk: (record) ->
+    isAdminOrOwner( Meteor.userId(), record)
 
   insertOk: (record) ->
     true
 
   remove: (select, callback) ->
     # Do something here
-    
+
     @find(select)?.forEach (record) ->
       TestSubData.remove
         parent: record._id
@@ -121,7 +123,7 @@ class TestDataCollection extends IronTableCollection
 @TestData = new TestDataCollection('testData')
 
 # Client Side Permissions
-TestData.allow 
+TestData.allow
   update: isUser #isAdmin
   remove: isUser #isAdmin
   insert: isUser #isAdmin
@@ -167,13 +169,13 @@ Meteor.methods
     instrumentType = _.extend attributes,
       changed: new Date().getTime()
       updaterId: user._id
-      
+
     select =
       _id: _id
-    
+
     if not user.admin
       select.ownerId = user._id
-    
+
     TestData.update select,
       $set: instrumentType
 
@@ -193,7 +195,7 @@ Meteor.methods
         invalidKeys: invalidKeys
     else
       console.log('insertTestDataRecord', attributes, attributes.measurements)
-    
+
       if attributes.measurements?
         # Convert Object to an Array
         measurements = []
@@ -214,7 +216,7 @@ class TestSubDataCollection extends IronTableCollection
 
     recordName: 'Test Sub Record'
     colToUseForName : 'title'
-    
+
     schema:
       'title':
         placeholder: 'enter a name ...'
@@ -244,17 +246,17 @@ class TestSubDataCollection extends IronTableCollection
         onInsert: newDate
         display: Format.DateTime
 
-    deleteOk: (record) -> 
+    deleteOk: (record) ->
       true
 
-    editOk: (record) -> 
+    editOk: (record) ->
       true
 
 
 @TestSubData = new TestSubDataCollection('testSubData')
 
 # Permissions
-TestSubData.allow 
+TestSubData.allow
   update: isAdmin
   remove: isAdmin
 
@@ -268,7 +270,7 @@ class OtherTestDataCollection extends IronTableCollection
 
   recordName: 'Other Record'
   colToUseForName : 'name'
-  
+
   schema:
     'name':
       placeholder: 'enter a name ...'
@@ -312,10 +314,10 @@ class OtherTestDataCollection extends IronTableCollection
       onInsert: newDate
       display: Format.DateTime
 
-  deleteOk: (record) -> 
+  deleteOk: (record) ->
     true
 
-  editOk: (record) -> 
+  editOk: (record) ->
     true
 
   remove: (select, callback) ->
@@ -325,10 +327,6 @@ class OtherTestDataCollection extends IronTableCollection
 
 @OtherTestData = new OtherTestDataCollection('otherTestData')
 
-OtherTestData.allow 
+OtherTestData.allow
   update: isAdmin
   remove: isAdmin
-
-
-
-
