@@ -13,6 +13,8 @@
 @import "grayscale.import.less";
 @import "notFound.import.less";
 
+@import "mixins.import.less";
+
 
 body {
   background-color: #000;
@@ -22,6 +24,10 @@ body {
   background-attachment: fixed;
 }
 
+html {
+  //-webkit-font-smoothing: antialiased !important;
+  font-smooth: always !important;
+}
 
 img {
   max-width: 100%;
@@ -43,6 +49,11 @@ img {
   z-index: 1;
 }
 
+.modal-open {
+  .main {
+    .blur(2px);
+  }
+}
 
 .main {
   padding: 10px;
@@ -56,12 +67,12 @@ img {
   //border-radius: 5px;
   //box-shadow: 0 1px 10px #a7a7a7, inset 0 1px 0 #fff;
   min-height: 100px;
-  opacity: 0.95;
+  opacity: 0.9;
 
   .home {
     color: #ddd;
     background: #444;
-    opacity: 0;
+    opacity: 0.7;
     margin: auto;
     width: 50%;
     margin-top: 100px;
@@ -69,19 +80,19 @@ img {
     border-radius: 5px;
     text-align: center;
     box-shadow: 0 1px 10px #a7a7a7, inset 0 1px 0 #fff;
-    -webkit-transition: all 2s ease-in-out;
-    -moz-transition: all 2s ease-in-out;
-    transition: all 2s ease-in-out;
+    .transition(all 2s ease-in-out);
+    .blur(1px);
   }
 
   .home:hover {
-    color: #333;
-    background: #ccc;
-    opacity: 0.9;
+    //color: #333;
+    //background: #ccc;
+    opacity: 0.95;
+    .blur(0px);
   }
 
   .home-image {
-    transition: all 1.0s ease;
+    .transition(all 1.0s ease);
     margin-top: 40px;
     margin-bottom: 40px;
     opacity: 0.3;
@@ -89,8 +100,7 @@ img {
   }
 
   .home-image:hover {
-    -webkit-transform: rotate3d(1, 1, 1, -10deg);
-    transform: rotate3d(0, 0, 1, -10deg);
+    .transform(rotate3d(1, 1, 1, -10deg));
   }
 
   .standard {
@@ -112,7 +122,6 @@ img {
 .navbar-text {
   font-size: 14px;
 }
-
 
 
 .fullscreen {

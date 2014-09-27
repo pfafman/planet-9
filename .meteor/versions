@@ -32,7 +32,6 @@ iron:core@0.3.4
 iron:dynamic-template@0.4.1
 iron:layout@0.4.1
 iron:router@0.9.3
-joshowens:simple-form@0.1.8
 jquery@1.0.0
 json@1.0.0
 less@1.0.9
@@ -46,14 +45,14 @@ minimongo@1.0.3
 mobile-status-bar@1.0.0
 mongo-livedata@1.0.5
 mongo@1.0.6
+mrt:accounts-t9n@0.0.3
 mrt:filesaver@0.0.1
 mrt:moment@2.8.1
-mrt:underscore-string-latest@2.3.3
 npm-bcrypt@0.7.7
 observe-sequence@1.0.2
 ordered-dict@1.0.0
 percolatestudio:fastclick@0.6.7
-pfafman:accounts-entry@0.9.4
+pfafman:accounts-entry@0.9.0_1
 pfafman:bootstrap-switch-less@3.0.2
 pfafman:bootstrap3-less@0.3.2
 pfafman:coffee-alerts@0.2.1
@@ -63,7 +62,7 @@ pfafman:dc@2.0.0
 pfafman:epoch@0.1.1
 pfafman:font-awesome-4@4.2.0
 pfafman:google-loader@0.1.0
-pfafman:iron-table@0.4.11
+pfafman:iron-table@0.4.12
 pfafman:jasny-bootstrap-less@3.1.3
 pfafman:nvd3@0.1.0
 pfafman:plain-handlebars@1.0.2
@@ -79,7 +78,6 @@ sergeyt:typeahead@0.1.2
 service-configuration@1.0.1
 session@1.0.2
 sha@1.0.0
-softwarerero:accounts-t9n@0.0.17
 spacebars-compiler@1.0.2
 spacebars@1.0.2
 srp@1.0.0
