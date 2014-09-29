@@ -20,7 +20,7 @@ class @TestTableController extends IronTableController
   showNewButton    : true
   #newRecordRoute   : 'addTestData'
   #editRecordRoute  : 'editTestData'
-  formTemplate     : 'testDataForm'
+  #formTemplate     : 'testDataForm'
   newRecordTitle   : 'New Record'
   newRecordTooltip : 'Add a new record'
   doDownloadLink   : true

@@ -83,7 +83,18 @@ class TestDataCollection extends IronTableCollection
       contenteditable: true
       insert: false
       type: 'boolean'
-      template: 'checkMark'
+      #template: 'checkMark'  # Use the canned one
+    'select':
+      edit: true
+      contenteditable: true
+      insert: true
+      type: 'select'
+      select: [
+        'zero'
+        'one'
+        'two'
+        'three'
+      ]
     'created':
       edit: false
       insert: false
@@ -153,7 +164,6 @@ Meteor.methods
 
 
   updateTestDataRecord: (_id, attributes) ->
-    console.log('updateTestDataRecord', attributes)
     user = Meteor.user()
     throw new Meteor.Error(401, "You need to login to update a instrument") unless user
     throw new Meteor.Error(422, "No instrument type to update") unless _id
@@ -163,8 +173,6 @@ Meteor.methods
       for key, val of attributes.measurements
         measurements.push val
       attributes.measurements = measurements
-
-    console.log('updateTestDataRecord', attributes)
 
     instrumentType = _.extend attributes,
       changed: new Date().getTime()
