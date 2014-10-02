@@ -14,6 +14,7 @@ class @UserTableController extends IronTableController
 
 class @TestTableController extends IronTableController
   tableTitle       : "Test Table"
+  subTitle         : "I am a sub title"
   sortColumn       : 'value'
   increment        : 10
   showBackButton   : true

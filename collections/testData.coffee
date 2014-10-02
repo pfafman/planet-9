@@ -40,6 +40,7 @@ class TestDataCollection extends IronTableCollection
       insert: true
       required: true
       autofocus: true
+      staticOn_edit: true
       tooltip: 'Enter whatever you like'
       canFilterOn: true
       helpText: 'Just a title'
@@ -114,6 +115,7 @@ class TestDataCollection extends IronTableCollection
     isAdminOrOwner( Meteor.userId(), record)
 
   editOk: (record) ->
+    console.log('editOK', record)
     isAdminOrOwner( Meteor.userId(), record)
 
   insertOk: (record) ->
