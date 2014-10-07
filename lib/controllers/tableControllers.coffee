@@ -12,6 +12,7 @@ class @UserTableController extends IronTableController
   inabox          : true
 
 
+
 class @TestTableController extends IronTableController
   tableTitle       : "Test Table"
   subTitle         : "I am a sub title"
@@ -30,6 +31,7 @@ class @TestTableController extends IronTableController
   fastRender       : DO_FAST_RENDER
   inabox           : true
   extraControlsTemplate: "testLink"
+  showJSON         : true
   #newRecordCallback :  (rec) ->
   #   console.log("New Record Callback", rec)
 
