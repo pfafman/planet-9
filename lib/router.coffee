@@ -78,6 +78,8 @@ if Meteor.isClient
 
   cleanUp = (pause) ->
     console.log("cleanUp")
+    #$('[rel="tooltip"]').tooltip('destroy')
+    #$('[rel="popover"]').popover('destroy')
     if $('#navbar-collapse')?.hasClass('in')
       $('#navbar-collapse').collapse('hide')
     if $('#navmenu-side').hasClass('in')

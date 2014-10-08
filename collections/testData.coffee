@@ -84,6 +84,8 @@ class TestDataCollection extends IronTableCollection
       contenteditable: true
       insert: false
       type: 'boolean'
+      #checkedMark: 'fa-check-circle'
+      #blankOnNotChecked: true
       #template: 'checkMark'  # Use the canned one
     'select':
       edit: true
@@ -115,7 +117,6 @@ class TestDataCollection extends IronTableCollection
     isAdminOrOwner( Meteor.userId(), record)
 
   editOk: (record) ->
-    console.log('editOK', record)
     isAdminOrOwner( Meteor.userId(), record)
 
   insertOk: (record) ->
