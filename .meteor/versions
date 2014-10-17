@@ -64,7 +64,7 @@ pfafman:dc@2.0.0
 pfafman:epoch@0.1.1
 pfafman:font-awesome-4@4.2.0_1
 pfafman:google-loader@0.1.0
-pfafman:iron-table@0.5.22
+pfafman:iron-table@0.5.25
 pfafman:jasny-bootstrap-less@3.1.3
 pfafman:nvd3@0.1.0
 pfafman:plain-handlebars@1.0.2
@@ -76,7 +76,7 @@ reload@1.1.1
 retry@1.0.1
 routepolicy@1.0.2
 sacha:spin@0.1.4
-sergeyt:typeahead@0.10.5_3
+sergeyt:typeahead@0.10.5_4
 service-configuration@1.0.2
 session@1.0.3
 sha@1.0.1
