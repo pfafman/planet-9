@@ -4,6 +4,7 @@
   <![endif]-->
 
   {{>coffeeModal}}
+  {{> coffeeAlerts}}
 
   {{#if currentUser}}
   
@@ -12,7 +13,7 @@
       {{> header}}
 
       <div class="main">
-          {{> coffeeAlerts}}
+          
           {{> yield region='beforeMain'}}
           {{> yield}}
       </div>
@@ -21,7 +22,7 @@
 
   {{else}}
 
-    {{> coffeeAlerts}}
+    
     {{> yield}}
     {{> footer}}
 

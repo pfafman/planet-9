@@ -5,7 +5,7 @@
 #  Test collection
 #
 
-@TestDataAlso = new Meteor.Collection("testDataAlso")
+@TestDataAlso = new Mongo.Collection("testDataAlso")
 
 
 class TestDataCollection extends IronTableCollection
@@ -38,7 +38,6 @@ class TestDataCollection extends IronTableCollection
       edit: true
       contenteditable: true
       insert: true
-      required: true
       autofocus: true
       staticOn_edit: true
       tooltip: 'Enter whatever you like'
@@ -52,8 +51,8 @@ class TestDataCollection extends IronTableCollection
       type: 'number'
       canFilterOn: true
       onInsert: ->
-          throw new Meteor.Error(401, 'Test Throw') unless Session.get("testDataValue")?
-          Session.get("testDataValue")
+        throw new Meteor.Error(401, 'Test Throw') unless Session.get("testDataValue")?
+        Session.get("testDataValue")
     'invert':
       edit: false
       insert: false
@@ -154,16 +153,16 @@ if Meteor.isServer
 # Add a method to do server side delete
 Meteor.methods
   removeTestDataRecord: (select) ->
-      user = Meteor.user()
-      throw new Meteor.Error(401, "Need to be logged in") unless user
+    user = Meteor.user()
+    throw new Meteor.Error(401, "Need to be logged in") unless user
 
-      if not user.admin
-        # Add in select for ownership
-        console.log('removeTestDataRecord not admin')
+    if not user.admin
+      # Add in select for ownership
+      console.log('removeTestDataRecord not admin')
 
-      TestData.remove select, (error) ->
-        if error
-          Meteor.throw('400', "Error deleting Test Record: #{error.reason}")
+    TestData.remove select, (error) ->
+      if error
+        Meteor.throw('400', "Error deleting Test Record: #{error.reason}")
 
 
   updateTestDataRecord: (_id, attributes) ->
@@ -223,45 +222,45 @@ Meteor.methods
 
 
 class TestSubDataCollection extends IronTableCollection
-    classID: 'TestSubData'
+  classID: 'TestSubData'
 
-    recordName: 'Test Sub Record'
-    colToUseForName : 'title'
+  recordName: 'Test Sub Record'
+  colToUseForName : 'title'
 
-    schema:
-      'title':
-        placeholder: 'enter a name ...'
-        required: true
-        edit: true
-        insert: true
-        autofocus: true
-        tooltip: 'Enter whatever you like'
-        canFilterOn: true
-      'parent':
-        edit: false
-      'comment':
-        edit: true
-        class: "hidden-xs"
-        canFilterOn: true
-      'created':
-        edit: false
-        insert: false
-        onInsert: newDate
-        display: Format.DateTime
-        class: 'visible-lg'
-      'last_update':
-        header: "updated"
-        edit: false
-        insert: false
-        onUpdate: newDate
-        onInsert: newDate
-        display: Format.DateTime
+  schema:
+    'title':
+      placeholder: 'enter a name ...'
+      required: true
+      edit: true
+      insert: true
+      autofocus: true
+      tooltip: 'Enter whatever you like'
+      canFilterOn: true
+    'parent':
+      edit: false
+    'comment':
+      edit: true
+      class: "hidden-xs"
+      canFilterOn: true
+    'created':
+      edit: false
+      insert: false
+      onInsert: newDate
+      display: Format.DateTime
+      class: 'visible-lg'
+    'last_update':
+      header: "updated"
+      edit: false
+      insert: false
+      onUpdate: newDate
+      onInsert: newDate
+      display: Format.DateTime
 
-    deleteOk: (record) ->
-      true
+  deleteOk: (record) ->
+    true
 
-    editOk: (record) ->
-      true
+  editOk: (record) ->
+    true
 
 
 @TestSubData = new TestSubDataCollection('testSubData')

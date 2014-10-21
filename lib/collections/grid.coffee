@@ -1,6 +1,6 @@
 
 
-@Grid = new Meteor.Collection('grid')
+@Grid = new Mongo.Collection('grid')
 
 # Client Side Permissions
 Grid.allow
