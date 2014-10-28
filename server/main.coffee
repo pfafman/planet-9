@@ -30,15 +30,15 @@ Meteor.startup ->
         select: getSelect()
 
         location:
-            type: "Point"
-            coordinates: [180*Math.random(), 90*Math.random()]
+          type: "Point"
+          coordinates: [180*Math.random(), 90*Math.random()]
       for j in [1..5]
         TestSubData.insert
-            title: "Sub Item #{i}:#{j}"
-            parent: main_id
-            comment: "This is a sub doc for #{i}"
-            created: new Date()
-            last_update: new Date()
+          title: "Sub Item #{i}:#{j}"
+          parent: main_id
+          comment: "This is a sub doc for #{i}"
+          created: new Date()
+          last_update: new Date()
 
 
   if OtherTestData.find().count() isnt 200
@@ -66,3 +66,5 @@ Meteor.startup ->
 
   TestData._ensureIndex
     "location": "2dsphere"
+
+
