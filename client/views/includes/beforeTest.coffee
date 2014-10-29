@@ -1,3 +1,3 @@
  
- Template.beforeTest.rendered = ->
-  console.log('beforeTest rendered')
+Template.beforeTest.rendered = ->
+  #console.log('beforeTest rendered')

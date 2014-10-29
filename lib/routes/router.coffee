@@ -73,10 +73,10 @@ Router.map ->
 
 
 if Meteor.isClient
-  Router.onBeforeAction (pause) ->
-    AccountsEntry.signInRequired(@, pause)
+  Router.onBeforeAction ->
+    AccountsEntry.signInRequired(@)
 
-  cleanUp = (pause) ->
+  cleanUp = ->
     console.log("cleanUp")
     #$('[rel="tooltip"]').tooltip('destroy')
     #$('[rel="popover"]').popover('destroy')
@@ -86,11 +86,11 @@ if Meteor.isClient
       $('#navmenu-side')?.offcanvas('hide')
 
 
-
   Router.onStop cleanUp
 
-  scrollToTop = (pause) ->
+  scrollToTop = ->
     $(window).scrollTop(0)
+    @next()
 
   Router.onRun scrollToTop
 

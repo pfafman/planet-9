@@ -10,8 +10,6 @@ accounts-password
 email
 d3
 facts
-iron:router
-pfafman:accounts-entry
 pfafman:coffee-alerts
 pfafman:coffee-modal
 pfafman:font-awesome-4
@@ -33,4 +31,6 @@ pfafman:bootstrap3-less
 pfafman:jasny-bootstrap-less
 sergeyt:typeahead
 reactive-var
+iron:router
+pfafman:accounts-entry
 

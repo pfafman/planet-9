@@ -44,13 +44,13 @@ class @TestTableController extends IronTableController
   #      comment: 'test'
 
   action: ->
-    console.log('action')
+    #console.log('action')
     @render()
 
     @render 'beforeTest',
       to: 'beforeMain'
       data: ->
-        conosle.log("beforeTest data")
+        #console.log("beforeTest data")
         comment: 'test'
 
   onRun: ->
@@ -62,7 +62,7 @@ class @TestTableController extends IronTableController
   #  console.log("TestTable data")
   #  super
   onAfterAction: ->
-    console.log("Can we get at the Template?", @)
+    #console.log("Can we get at the Template?", @)
 
 
   # Override the removeRecord Function
