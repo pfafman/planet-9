@@ -25,5 +25,5 @@ Template.nav.helpers
     if args?.pop?()
       if args?
         active = _.any args, (name) ->
-          Router.current?()?.route?.name is name
+          Router.current?()?.route?.getName() is name
         active && 'active'

@@ -75,6 +75,7 @@ Router.map ->
 if Meteor.isClient
   Router.onBeforeAction ->
     AccountsEntry.signInRequired(@)
+    
 
   cleanUp = ->
     console.log("cleanUp")
