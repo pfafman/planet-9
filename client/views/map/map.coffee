@@ -1,27 +1,33 @@
 
-loadingGoogleMaps = false
+
 mapId = 'map-canvas'
 map = null
 
 googleMapsLoaded = ->
-  console.log("GoogleMaps Loaded")
-  loadingGoogleMaps = false
+  console.log("googleMapsLoaded", google?.maps?)
   initMap()
   Session.set('GoogleMapsLoaded',true)
 
+@GoogleMapsInitMapPage = ->
+  console.log("GoogleMaps initialized on page", google?.maps)
+  if google?.maps?
+    googleMapsLoaded()
+  else
+    console.log("Could not load google maps")
+    CoffeeAlerts.error("Server Error!  Cannot load google maps!")
 
 initMap = ->
   console.log("initMap")
 
-  mapOptions = 
+  mapOptions =
     disableDefaultUI: true
     mapTypeId: google.maps.MapTypeId.ROADMAP
     streetViewControl: false
     zoom: 11
-    overviewMapControl: true    
+    overviewMapControl: true
     center: new google.maps.LatLng(39.11,-120.031)
     scaleControl: true
-    # How you would like to style the map. 
+    # How you would like to style the map.
     # This is where you would paste any style found on Snazzy Maps.
     styles: [
       {
@@ -138,7 +144,6 @@ initMap = ->
       }
     ]
       
-
   map = new google.maps.Map(document.getElementById(mapId), mapOptions)
   
   bikeLayer = new google.maps.BicyclingLayer()
@@ -156,11 +161,34 @@ resizeMapPane = ->
 
 Template.map.created = ->
   console.log("map created")
+  @autorun ->
+    if HaveGoogleMaps.get()
+      googleMapsLoaded()
 
 Template.map.rendered = ->
-  console.log("map rendered")
+  console.log("map rendered", )
   resizeMapPane()
   $(window).resize(resizeMapPane)
+
+
+  console.log("Google Map check", google?.maps?, window.GettingGoogleMaps, HaveGoogleMaps.get())
+  ###
+  if not google?.maps? and not GettingGoogleMaps
+    console.log("Getting maps on page")
+    HaveGoogleMaps.set(false)
+    GettingGoogleMaps = true
+    $.getScript "https://maps.googleapis.com/maps/api/js?callback=GoogleMapsInitMapPage", ( data, textStatus, jqxhr ) ->
+      console.log("Load google maps success", data, textStatus, jqxhr)
+    .done (script, textStatus) ->
+      console.log("Load google maps done", script, textStatus, google)
+    .fail (jqxhr, settings, exception) ->
+      console.log("Load google maps FAIL!!!", jqxhr, settings, exception)
+      CoffeeAlerts.error("Server Error!  Cannot load google maps!")
+  ###
+
+  
+
+  ###
   if not GoogleLoader?.load?
       console.log("Error: no GoogleLoader", GoogleLoader?)
       CoffeeAlerts.error("Server Error!  Cannot load google maps!")
@@ -173,6 +201,7 @@ Template.map.rendered = ->
       google.load 'maps', '3',
         callback: googleMapsLoaded
         other_params: 'sensor=false'
+  ###
 
 Template.map.helpers
   mapIsReady: ->

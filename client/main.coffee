@@ -1,4 +1,5 @@
 
+
 Meteor.startup ->
   console.log("Meteor Start on Client")
   
@@ -31,4 +32,7 @@ Meteor.startup ->
         #status     : true
         xfbml      : true
         version    : 'v2.1'
+
+
     
+
