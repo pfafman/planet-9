@@ -59,9 +59,9 @@ npm-bcrypt@0.7.7
 observe-sequence@1.0.3
 ordered-dict@1.0.1
 percolatestudio:fastclick@0.6.7
-pfafman:accounts-entry@0.9.1_1
+pfafman:accounts-entry@0.9.1_2
 pfafman:bootstrap-switch-less@3.0.2
-pfafman:bootstrap3-less@0.3.2_2
+pfafman:bootstrap3-less@0.3.3_1
 pfafman:coffee-alerts@0.5.0
 pfafman:coffee-modal@0.4.0
 pfafman:crossfilter@1.3.9
@@ -69,7 +69,7 @@ pfafman:dc@2.0.0
 pfafman:epoch@0.1.1
 pfafman:font-awesome-4@4.2.0_2
 pfafman:google-loader@0.1.1
-pfafman:iron-table@0.6.0
+pfafman:iron-table@0.6.1
 pfafman:jasny-bootstrap-less@3.1.3_1
 pfafman:nvd3@0.1.0
 pfafman:plain-handlebars@1.0.2
