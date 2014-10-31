@@ -76,7 +76,7 @@ if Meteor.isClient
   Router.onBeforeAction ->
     AccountsEntry.signInRequired(@)
     
-
+    
   cleanUp = ->
     console.log("cleanUp")
     #$('[rel="tooltip"]').tooltip('destroy')
@@ -94,8 +94,6 @@ if Meteor.isClient
     @next()
 
   Router.onRun scrollToTop
-
-  # Not sure the below do anything ???
 
   ###
   # Messes up tables
