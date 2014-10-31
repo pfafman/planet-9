@@ -10,6 +10,8 @@ accounts-password
 email
 d3
 facts
+reactive-var
+fastclick
 pfafman:coffee-alerts
 pfafman:coffee-modal
 pfafman:font-awesome-4
@@ -19,18 +21,17 @@ pfafman:nvd3
 pfafman:plivo
 pfafman:iron-table
 pfafman:epoch
-mrt:moment
-percolatestudio:fastclick
-dburles:collection-helpers
-tmeasday:publish-counts
+pfafman:accounts-entry
 pfafman:google-loader
 pfafman:bootstrap-switch-less
 pfafman:plain-handlebars
-biasport:facebook-sdk
 pfafman:bootstrap3-less
 pfafman:jasny-bootstrap-less
-sergeyt:typeahead
-reactive-var
+biasport:facebook-sdk
+mrt:moment
 iron:router
-pfafman:accounts-entry
+dburles:collection-helpers
+tmeasday:publish-counts
+sergeyt:typeahead
+frozeman:animation-helper-velocity
 

@@ -95,4 +95,14 @@ if Meteor.isClient
 
   Router.onRun scrollToTop
 
-  #Router.onBeforeAction loading
+  # Not sure the below do anything ???
+
+  ###
+  # Messes up tables
+  Router.plugin 'loading', 
+    loadingTemplate: 'loading'
+  ###
+
+  Router.plugin 'dataNotFound',
+    dataNotFoundTemplate: 'notFound'
+

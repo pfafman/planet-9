@@ -3,11 +3,14 @@
 mapId = 'map-canvas'
 map = null
 
+###
 googleMapsLoaded = ->
   console.log("googleMapsLoaded", google?.maps?)
   initMap()
-  Session.set('GoogleMapsLoaded',true)
+  #Session.set('GoogleMapsLoaded',true)
+###
 
+###
 @GoogleMapsInitMapPage = ->
   console.log("GoogleMaps initialized on page", google?.maps)
   if google?.maps?
@@ -15,9 +18,10 @@ googleMapsLoaded = ->
   else
     console.log("Could not load google maps")
     CoffeeAlerts.error("Server Error!  Cannot load google maps!")
+###
 
 initMap = ->
-  console.log("initMap")
+  console.log("initMap", google?.maps)
 
   mapOptions =
     disableDefaultUI: true
@@ -144,13 +148,17 @@ initMap = ->
       }
     ]
       
-  map = new google.maps.Map(document.getElementById(mapId), mapOptions)
+  console.log("make map", mapId, document.getElementById(mapId))
+  if document.getElementById(mapId)?
+    map = new google.maps.Map(document.getElementById(mapId), mapOptions)
   
-  bikeLayer = new google.maps.BicyclingLayer()
-  bikeLayer.setMap(map)
-  console.log("Google maps setup complete")
-  Session.set('GoogleMapsReady',true)
-  resizeMapPane()
+    bikeLayer = new google.maps.BicyclingLayer()
+    bikeLayer.setMap(map)
+    console.log("Google maps setup complete")
+    resizeMapPane()
+    true
+  else
+    false
 
 resizeMapPane = ->
   paneHeight = $(window).height()
@@ -161,17 +169,21 @@ resizeMapPane = ->
 
 Template.map.created = ->
   console.log("map created")
-  @autorun ->
-    if HaveGoogleMaps.get()
-      googleMapsLoaded()
+  @googleMapsReady = new ReactiveVar(false)
+  
 
 Template.map.rendered = ->
-  console.log("map rendered", )
+  console.log("map rendered")
   resizeMapPane()
   $(window).resize(resizeMapPane)
 
+  @autorun =>
+    console.log("Auto Run")
+    if HaveGoogleMaps.get()
+      if initMap()
+        @googleMapsReady.set(true)
 
-  console.log("Google Map check", google?.maps?, window.GettingGoogleMaps, HaveGoogleMaps.get())
+  #console.log("Google Map check", google?.maps?, window.GettingGoogleMaps, HaveGoogleMaps.get())
   ###
   if not google?.maps? and not GettingGoogleMaps
     console.log("Getting maps on page")
@@ -205,4 +217,6 @@ Template.map.rendered = ->
 
 Template.map.helpers
   mapIsReady: ->
-    Session.get('GoogleMapsReady')
+    Template.instance().googleMapsReady.get()
+
+
