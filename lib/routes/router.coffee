@@ -55,6 +55,8 @@ Router.map ->
 
   @route 'epochTest'
 
+  @route 'googleChart'
+
   @route 'controlTests'
 
   @route 'dialogTest'
