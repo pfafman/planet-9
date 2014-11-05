@@ -1,24 +1,9 @@
 
-
+# Locals
 mapId = 'map-canvas'
 map = null
+blueDotMarker = null
 
-###
-googleMapsLoaded = ->
-  console.log("googleMapsLoaded", google?.maps?)
-  initMap()
-  #Session.set('GoogleMapsLoaded',true)
-###
-
-###
-@GoogleMapsInitMapPage = ->
-  console.log("GoogleMaps initialized on page", google?.maps)
-  if google?.maps?
-    googleMapsLoaded()
-  else
-    console.log("Could not load google maps")
-    CoffeeAlerts.error("Server Error!  Cannot load google maps!")
-###
 
 initMap = ->
   console.log("initMap", google?.maps)
@@ -167,53 +152,71 @@ resizeMapPane = ->
   paneHeight -= 100
   $("##{mapId}").height(paneHeight)
 
-Template.map.created = ->
-  console.log("map created")
-  @googleMapsReady = new ReactiveVar(false)
-  
 
+locationMarker = (loc) ->
+  
+  if not blueDotMarker?
+    bdIcon =
+      url: '/img/bluedot_retina.gif'
+      size: null
+      origin: null
+      anchor: new google.maps.Point( 9, 9 )
+      scaledSize: new google.maps.Size( 19, 19 )
+
+    blueDotMarker = new google.maps.Marker
+      position:
+        lat: loc.lat
+        lng: loc.lng
+      flat: true
+      icon: bdIcon
+      map: map
+      optimized: false
+      title: "Current Position"
+      visible: true
+      zIndex: 10
+      opacity: 0.8
+
+  #blueDotMarker.setVisible(false)
+  blueDotMarker.setPosition
+    lat: loc.lat
+    lng: loc.lng
+  #blueDotMarker.setVisible(true)
+
+
+Template.map.created = ->
+  console.log("map created", Geolocation.currentLocation())
+  @googleMapsReady = new ReactiveVar(false)
+
+  
 Template.map.rendered = ->
-  console.log("map rendered")
+  console.log("map rendered", Geolocation.currentLocation())
   resizeMapPane()
   $(window).resize(resizeMapPane)
 
   @autorun =>
     console.log("Auto Run")
-    if HaveGoogleMaps.get()
+    if HaveGoogleMaps.get()   # Global in lib/google
       if initMap()
         @googleMapsReady.set(true)
 
-  #console.log("Google Map check", google?.maps?, window.GettingGoogleMaps, HaveGoogleMaps.get())
-  ###
-  if not google?.maps? and not GettingGoogleMaps
-    console.log("Getting maps on page")
-    HaveGoogleMaps.set(false)
-    GettingGoogleMaps = true
-    $.getScript "https://maps.googleapis.com/maps/api/js?callback=GoogleMapsInitMapPage", ( data, textStatus, jqxhr ) ->
-      console.log("Load google maps success", data, textStatus, jqxhr)
-    .done (script, textStatus) ->
-      console.log("Load google maps done", script, textStatus, google)
-    .fail (jqxhr, settings, exception) ->
-      console.log("Load google maps FAIL!!!", jqxhr, settings, exception)
-      CoffeeAlerts.error("Server Error!  Cannot load google maps!")
-  ###
 
+  @autorun =>
+    if  @googleMapsReady.get()
+      console.log("Auto Run Set Location", Geolocation.latLng(), Geolocation.error())
+      location = Geolocation.latLng()
+      if location?.lat? and location.lng?
+        console.log("Pan map to", location)
+        map.panTo
+          lat: location.lat
+          lng: location.lng
+        map.setZoom(15)
+        locationMarker(location)
+
+
+  @autorun ->
+    if Geolocation.error()
+      CoffeeAlerts.alert(Geolocation.error(), "Geolocation Error")
   
-
-  ###
-  if not GoogleLoader?.load?
-      console.log("Error: no GoogleLoader", GoogleLoader?)
-      CoffeeAlerts.error("Server Error!  Cannot load google maps!")
-  else if not loadingGoogleMaps
-    #and not Session.get('GoogleMapsLoaded')
-    #Session.get('GoogleMapsLoaded')
-    console.log("loadGoogleMaps")
-    loadingGoogleMaps = true
-    GoogleLoader.load ->
-      google.load 'maps', '3',
-        callback: googleMapsLoaded
-        other_params: 'sensor=false'
-  ###
 
 Template.map.helpers
   mapIsReady: ->
