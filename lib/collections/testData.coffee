@@ -167,18 +167,14 @@ Meteor.methods
 
   updateTestDataRecord: (_id, attributes) ->
     user = Meteor.user()
-    throw new Meteor.Error(401, "You need to login to update a instrument") unless user
-    throw new Meteor.Error(422, "No instrument type to update") unless _id
+    throw new Meteor.Error(401, "You need to login to update") unless user
+    throw new Meteor.Error(422, "No record to update") unless _id
 
     if attributes.measurements?
       measurements = []
       for key, val of attributes.measurements
         measurements.push val
       attributes.measurements = measurements
-
-    instrumentType = _.extend attributes,
-      changed: new Date().getTime()
-      updaterId: user._id
 
     select =
       _id: _id
@@ -187,7 +183,7 @@ Meteor.methods
       select.ownerId = user._id
 
     TestData.update select,
-      $set: instrumentType
+      $set: attributes
 
 
   insertTestDataRecord: (attributes) ->
@@ -212,13 +208,14 @@ Meteor.methods
         for key, val of attributes.measurements
           measurements.push val
         attributes.measurements = measurements
+        
       console.log('insertTestDataRecord', attributes)
-      instrumentType = _.extend attributes,
+      data = _.extend attributes,
         ownerId: user._id
         updaterId: user._id
-        created: new Date().getTime()
-        updated: new Date().getTime()
-      TestData.insert(instrumentType)
+        created: new Date() #.getTime()
+        updated: new Date() #.getTime()
+      TestData.insert(data)
 
 
 class TestSubDataCollection extends IronTableCollection
