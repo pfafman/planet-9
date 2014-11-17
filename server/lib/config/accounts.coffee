@@ -27,14 +27,12 @@ Accounts.onCreateUser (options, user) ->
   email = user.emails[0].address
   console.log("onCreateUser: New user #{user.username} (#{email})")
 
-  ###
-  @unblock()
-  Email.send
-    to: "tim@pfafman.com"
-    from: "tim@pfafman.com"
-    subject: "New Account"
-    text: "New account created for #{email}"
-  ###
+  Meteor.defer ->
+    Email.send
+      to:      "tim@pfafman.com"
+      from:    "tim@pfafman.com"
+      subject: "New Account"
+      text:    "New account created for #{email}"
 
   if options.profile
     user.profile = options.profile
