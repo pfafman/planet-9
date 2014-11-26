@@ -82,6 +82,7 @@ class TestDataCollection extends IronTableCollection
       edit: true
       contenteditable: true
       insert: false
+      canFilterOn: true
       type: 'boolean'
       #checkedMark: 'fa-check-circle'
       #blankOnNotChecked: true

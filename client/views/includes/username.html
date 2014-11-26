@@ -1,0 +1,16 @@
+<template name="username">
+    <a href="/admin/impersonate/{{value._id}}" class="impersonate btn btn-link btn-xs" title="impersonate this user" rel="tooltip">
+        <i class="fa fa-bug"></i>
+    </a>
+    {{value.username}}
+    {{#if online}}
+        <i class="fa fa-cog fa-spin" title="online" rel="tooltip"></i>
+    {{/if}}
+</template>
+
+<template name="email">
+    <a href="mailto:{{value.address}}" title="send user email" rel="tooltip">{{value.address}}</a>
+    {{#if value.verified}}
+        <i title="email verified" rel="tooltip" class="fa fa-check-circle green-check"></i>
+    {{/if}}
+</template>

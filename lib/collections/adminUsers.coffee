@@ -19,6 +19,9 @@ Meteor.users.schema =
     staticOn_edit: true
     edit: false
     canFilterOn: true
+    template: 'username'
+    display: (val, rec) ->
+      rec
       
   'name':
     staticOn_edit: true
@@ -49,7 +52,7 @@ Meteor.users.schema =
 
 
 # Permissions
-Meteor.users.allow 
+Meteor.users.allow
   update: isAdmin
   remove: isAdmin
 

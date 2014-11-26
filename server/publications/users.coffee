@@ -26,3 +26,10 @@ Meteor.publish "ironTable_publish_adminUsers", (select, sort, limit, skip) ->
       sort: sort
       limit: limit
       skip: skip
+
+
+Meteor.publish null, ->
+  if @userId and Meteor.users.findOne(@userId)?.admin
+    Presences.find()
+  
+  
