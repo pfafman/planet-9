@@ -9,7 +9,6 @@ Meteor.publish "userData", ->
 
 
 Meteor.publish "ironTable_publish_adminUsers", (select, sort, limit, skip) ->
-  cursors = []
   if @userId and Meteor.users.findOne(@userId)?.admin
 
     publishCount @, "usersCount", Meteor.users.find(select),
@@ -32,4 +31,10 @@ Meteor.publish null, ->
   if @userId and Meteor.users.findOne(@userId)?.admin
     Presences.find()
   
+Facts.setUserIdFilter (userId) ->
+  user = Meteor.users.findOne(userId)
+  user?
+
+
+Meteor.publish null, ->
   

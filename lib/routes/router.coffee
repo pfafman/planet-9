@@ -11,6 +11,8 @@ Router.map ->
 
   @route 'nvd3Test'
 
+  @route 'watchFiles'
+
   @route 'dcTest',
     waitOn: ->
       console.log("dcTest waitOn")
@@ -61,6 +63,8 @@ Router.map ->
 
   @route 'dialogTest'
 
+  @route 'materialize'
+
   #
   # Admin
   #
@@ -99,7 +103,7 @@ if Meteor.isClient
 
   ###
   # Messes up tables
-  Router.plugin 'loading', 
+  Router.plugin 'loading',
     loadingTemplate: 'loading'
   ###
 

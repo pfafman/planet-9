@@ -68,3 +68,7 @@ Meteor.startup ->
     "location": "2dsphere"
 
 
+  #fs.watch '/Users/tep/Projects/meteor/planet9/tests', (monitor) ->
+  #  monitor.on "changed", (f, curr, prev) ->
+  #    console.log("file changes", f, curr, prev)
+

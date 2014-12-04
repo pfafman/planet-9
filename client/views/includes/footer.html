@@ -1,5 +1,13 @@
 <template name="footer">
+  <div class="facts hidden">
+    {{> serverFacts}}
+  </div>
   <footer>
+    <span class="status pull-left">
+      <button class="facts-btn btn btn-link btn-xs" >
+        <i class="fa fa-info-circle"></i>
+      </button>
+    </span>
     &copy; 2014 Pfafman.com
     <span class="status pull-right">
         {{#if bleEnabled}}

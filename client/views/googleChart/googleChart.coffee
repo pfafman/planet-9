@@ -55,8 +55,9 @@ testData = ->
   #console.log('rows', rows)
   rows
 
+
 nextPoint = ->
-  timestamp = moment().unix()
+  timestamp = moment().valueOf()/1000.0
   w = 2 * Math.PI * (timestamp-baseTimestamp) / period
   rtn = [
     moment(timestamp).toDate()
@@ -140,8 +141,8 @@ Template.googleChart.rendered = ->
             while @chartData.getNumberOfRows() > maxCount
               @chartData.removeRow(0)
               @chart.draw(@chartData, options)
-          , 100
-        , 500
+          , 50
+        , 300
 
         
 

@@ -9,12 +9,10 @@ less
 accounts-password
 email
 d3
-facts
 reactive-var
 fastclick
 pfafman:coffee-alerts
 pfafman:coffee-modal
-pfafman:font-awesome-4
 pfafman:crossfilter
 pfafman:dc
 pfafman:nvd3
@@ -37,4 +35,9 @@ frozeman:animation-helper-velocity
 mdg:geolocation
 meteorhacks:kadira
 tmeasday:presence
+facts
+pfafman:font-awesome-4
+pfafman:publish-wrapper
+mquandalle:bower
+pfafman:watch-file
 
