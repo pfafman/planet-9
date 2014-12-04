@@ -80,7 +80,7 @@ pfafman:nvd3@1.6.0
 pfafman:plain-handlebars@1.0.2
 pfafman:plivo@1.1.0
 pfafman:publish-wrapper@0.1.0
-pfafman:watch-file@0.1.1
+pfafman:watch-file@0.1.4
 random@1.0.1
 reactive-dict@1.0.4
 reactive-var@1.0.3
