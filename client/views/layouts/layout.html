@@ -9,15 +9,7 @@
   {{#if currentUser}}
   
     {{> offScreenMenu}}
-    <div class="canvas">
-      {{> header}}
-
-      <div class="main">
-          {{> yield 'beforeMain'}}
-          {{> yield}}
-      </div>
-      {{> footer}}
-    </div>
+    {{> canvas}}
 
   {{else}}
 
@@ -27,4 +19,16 @@
   {{/if}}
 
 
+</template>
+
+<template name="canvas">
+  <div class="canvas">
+    {{> header}}
+
+    <div class="main">
+        {{> yield 'beforeMain'}}
+        {{> yield}}
+    </div>
+    {{> footer}}
+  </div>
 </template>

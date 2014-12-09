@@ -11,7 +11,7 @@ Template.header.created = ->
     $('.navbar-custom').removeClass('hide')
     Meteor.defer ->
       $('.navbar-custom').css('opacity', 0.8)
-  , 3000
+  , 1000
 
 
 Template.header.helpers
