@@ -41,5 +41,3 @@ pfafman:publish-wrapper
 mquandalle:bower
 pfafman:watch-file
 gabrielpoca:bender
-pfafman:mongoinspector
-
