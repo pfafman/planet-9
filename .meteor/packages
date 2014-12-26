@@ -33,7 +33,6 @@ tmeasday:publish-counts
 sergeyt:typeahead
 frozeman:animation-helper-velocity
 mdg:geolocation
-meteorhacks:kadira
 tmeasday:presence
 facts
 pfafman:font-awesome-4
@@ -41,3 +40,4 @@ pfafman:publish-wrapper
 mquandalle:bower
 pfafman:watch-file
 gabrielpoca:bender
+meteorhacks:kadira
