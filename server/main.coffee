@@ -68,6 +68,32 @@ Meteor.startup ->
     "location": "2dsphere"
 
 
+  
+  testObjs = [
+    _id: 1
+    name: "yotta"
+    symbol: "Y"
+    multiplier: "10^24"
+  ,
+    _id: 2
+    name: "zetta"
+    symbol: "Z"
+    multiplier: "10^21"
+  ]
+
+  console.log("Find Test", testObjs)
+
+  ###
+  z = testObjs.find (obj) ->
+    obj.name is 'zetta'
+  ###
+
+  z = _.find testObjs, (obj) ->
+    obj.name is 'zetta'
+
+  console.log("z is", z)
+  
+
   #fs.watch '/Users/tep/Projects/meteor/planet9/tests', (monitor) ->
   #  monitor.on "changed", (f, curr, prev) ->
   #    console.log("file changes", f, curr, prev)

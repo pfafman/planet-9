@@ -34,5 +34,27 @@ Meteor.startup ->
         version    : 'v2.1'
 
 
-    
+  testObjs = [
+    _id: 1
+    name: "yotta"
+    symbol: "Y"
+    multiplier: "10^24"
+  ,
+    _id: 2
+    name: "zetta"
+    symbol: "Z"
+    multiplier: "10^21"
+  ]
+
+  console.log("Find Test", testObjs)
+
+  ###
+  z = testObjs.find (obj) ->
+    obj.name is 'zetta'
+  ###
+
+  z = _.find testObjs, (obj) ->
+    obj.name is 'zetta'
+
+  console.log("z is", z)
 
