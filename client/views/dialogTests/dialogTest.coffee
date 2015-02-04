@@ -7,6 +7,9 @@ statusUpdate = ->
     CoffeeModal.close()
   , 3000
 
+Template.dialogTest.rendered = ->
+  $.material.init()
+
 Template.dialogTest.events
   'click #success': ->
     CoffeeAlerts.success("Success Test")

@@ -1,8 +1,9 @@
 
 
-
 Meteor.startup ->
-  AccountsEntry.config
-    signupCode: 'secret'
-    #defaultProfile:
-    #    someDefault: 'default'
+
+  if AccountsEntry?
+    AccountsEntry.config
+      signupCode: 'secret'
+      #defaultProfile:
+      #    someDefault: 'default'

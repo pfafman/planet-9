@@ -19,11 +19,8 @@ pfafman:nvd3
 pfafman:plivo
 pfafman:iron-table
 pfafman:epoch
-pfafman:accounts-entry
 pfafman:google-loader
-pfafman:bootstrap-switch-less
 pfafman:plain-handlebars
-pfafman:bootstrap3-less
 pfafman:jasny-bootstrap-less
 biasport:facebook-sdk
 mrt:moment
@@ -41,3 +38,7 @@ mquandalle:bower
 pfafman:watch-file
 gabrielpoca:bender
 meteorhacks:kadira
+useraccounts:bootstrap
+pfafman:bootstrap-material-design
+pfafman:bootstrap3-less
+pfafman:bootstrap-switch-less

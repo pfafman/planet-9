@@ -76,11 +76,6 @@ Router.map ->
   @route 'stats',
     path: '/admin/stats'
 
-
-
-if Meteor.isClient
-  Router.onBeforeAction ->
-    AccountsEntry.signInRequired(@)
     
     
   cleanUp = ->
@@ -109,4 +104,26 @@ if Meteor.isClient
 
   Router.plugin 'dataNotFound',
     dataNotFoundTemplate: 'notFound'
+
+
+if Meteor.isClient
+  Router.onBeforeAction ->
+    if not this.ready() or Meteor.loggingIn()
+      @render('loading')
+    else
+      @next()
+
+
+  Router.onBeforeAction AccountsTemplates.ensureSignedIn,
+    except: AccountsTemplates.knownRoutes #['atSignIn', 'atSignUp', 'atForgotPassword']
+
+  Router.onBeforeAction ->
+    AccountsTemplates.clearError()
+  ,
+    only: AccountsTemplates.knownRoutes
+
+
+  #Router.onAfterAction ->
+  #  console.log("onAfterAction init material")
+  #  $.material.init()
 

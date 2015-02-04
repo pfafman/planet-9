@@ -1,8 +1,9 @@
 
 Template.controlTests.rendered = ->
   console.log("controlTests rendered")
-  $('#units').bootstrapSwitch()
-
+  #$('#units').bootstrapSwitch()
+  $.material.init()
+  
 
 Template.controlTests.helpers
   
