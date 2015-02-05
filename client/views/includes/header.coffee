@@ -14,6 +14,9 @@ Template.header.created = ->
   , 1000
 
 
+Template.header.rendered = ->
+  $.material.init()
+
 Template.header.helpers
   pageTitle: ->
     Session.get('pageTitle') or "Planet 9"

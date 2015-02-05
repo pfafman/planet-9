@@ -20,6 +20,7 @@ ejson@1.0.5
 email@1.0.5
 facts@1.0.3
 fastclick@1.0.2
+fezvrasta:bootstrap-material-design@0.2.1
 follower-livedata@1.0.3
 frozeman:animation-helper-velocity@0.1.8
 gabrielpoca:bender@0.1.7
@@ -63,9 +64,6 @@ npm-bcrypt@0.7.7
 observe-sequence@1.0.4
 ordered-dict@1.0.2
 percolate:velocityjs@1.0.0
-pfafman:bootstrap-material-design@0.3.0
-pfafman:bootstrap-switch-less@3.2.2
-pfafman:bootstrap3-less@3.3.2
 pfafman:coffee-alerts@0.5.1_1
 pfafman:coffee-modal@0.4.1
 pfafman:crossfilter@1.3.9
@@ -101,6 +99,7 @@ templating@1.0.11
 tmeasday:presence@1.0.3
 tmeasday:publish-counts@0.3.4
 tracker@1.0.5
+twbs:bootstrap@3.3.1
 ui@1.0.5
 underscore@1.0.2
 url@1.0.3

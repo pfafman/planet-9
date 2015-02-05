@@ -39,6 +39,4 @@ pfafman:watch-file
 gabrielpoca:bender
 meteorhacks:kadira
 useraccounts:bootstrap
-pfafman:bootstrap-material-design
-pfafman:bootstrap3-less
-pfafman:bootstrap-switch-less
+fezvrasta:bootstrap-material-design
