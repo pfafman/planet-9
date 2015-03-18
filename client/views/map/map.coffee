@@ -183,12 +183,12 @@ locationMarker = (loc) ->
   #blueDotMarker.setVisible(true)
 
 
-Template.map.created = ->
+Template.map.onCreated ->
   console.log("map created", Geolocation.currentLocation())
   @googleMapsReady = new ReactiveVar(false)
 
   
-Template.map.rendered = ->
+Template.map.onRendered ->
   console.log("map rendered", Geolocation.currentLocation())
   resizeMapPane()
   $(window).resize(resizeMapPane)
